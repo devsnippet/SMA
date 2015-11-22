@@ -1,0 +1,23 @@
+ul.bxslider {
+  margin: 0;
+  padding: 0;
+}
+
+.bx-wrapper .bx-viewport 
+{
+    -moz-box-shadow: 0;
+    -webkit-box-shadow: 0;
+    box-shadow: none;
+    border: 0;
+    left: 0;
+    background: #fff;
+}
+a{
+	-webkit-transition: all 0s ease 0s;
+	-moz-transition: all 0s ease 0s;
+	transition: all 0s ease 0s;
+}
+
+nav.navbar{
+	margin-bottom:0;	
+}

@@ -1,0 +1,18 @@
+    <ul class="bxslider">
+        <li><img src="./images/home/slide1.jpg" title="Careful student" /></li>
+        <li><img src="./images/home/slide2.jpg" title="Cheerful student" /></li>
+        <li><img src="./images/home/slide3.jpg" title="Initiative student" /></li>
+    </ul>
+    <div class="container" style="margin-top:15px;">
+    	<div class="text-center">
+	        <h1>Student Management Administration</h1>
+        </div>
+        <div class="row" >
+        	<div class="col-xs-6 col-sm-3" ng-repeat="menu in menus">
+                <div class="tile">
+                    <img class="img-responsive" style="margin-bottom:15px;" ng-src="{{menu.image}}" />
+                    <a class="btn btn-large btn-primary btn-block" href="{{ menuUrl(menu) }}">{{ menu.button }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
