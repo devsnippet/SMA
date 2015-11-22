@@ -9,10 +9,12 @@
         </div>
         <div class="row" >
         	<div class="col-xs-6 col-sm-3" ng-repeat="menu in menus">
-                <div class="tile">
-                    <img class="img-responsive" style="margin-bottom:15px;" ng-src="{{menu.image}}" />
-                    <a class="btn btn-large btn-primary btn-block" href="{{ menuUrl(menu) }}">{{ menu.button }}</a>
-                </div>
+                <a href="{{ menuUrl(menu) }}">
+                    <div class="tile">
+                        <img class="img-responsive" style="margin-bottom:15px;" ng-src="{{menu.image}}" />
+                        <button type="button" class="btn btn-large btn-primary btn-block">{{ menu.button }}</button>
+                    </div>
+                </a>
             </div>
         </div>
     </div>

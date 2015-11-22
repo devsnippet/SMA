@@ -76,6 +76,58 @@ class StudentController extends \BaseController {
 				)
 			);
 		}
+		else if($id == 152){
+			$result = array(
+				'_links' => array(
+					"self" => array( "href" => $this->rootUrl . '/api/student/{id}' )
+				),
+				"embedded" => array(
+					"ea:student" => array(
+						"name" => "Bob",
+						"image" => "./images/student/152.jpg"
+					)
+				)
+			);
+		}
+		else if($id == 153){
+			$result = array(
+				'_links' => array(
+					"self" => array( "href" => $this->rootUrl . '/api/student/{id}' )
+				),
+				"embedded" => array(
+					"ea:student" => array(
+						"name" => "Charlie",
+						"image" => "./images/student/153.jpg"
+					)
+				)
+			);
+		}
+		else if($id == 154){
+			$result = array(
+				'_links' => array(
+					"self" => array( "href" => $this->rootUrl . '/api/student/{id}' )
+				),
+				"embedded" => array(
+					"ea:student" => array(
+						"name" => "Dave",
+						"image" => "./images/student/154.jpg"
+					)
+				)
+			);
+		}
+		else if($id == 155){
+			$result = array(
+				'_links' => array(
+					"self" => array( "href" => $this->rootUrl . '/api/student/{id}' )
+				),
+				"embedded" => array(
+					"ea:student" => array(
+						"name" => "Elisa",
+						"image" => "./images/student/155.jpg"
+					)
+				)
+			);
+		}
 		
 		return Response::json($result);
 	}

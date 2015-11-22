@@ -17,8 +17,14 @@ function($scope, $routeParams, UserService) {
 		else if(menu.rel == "teacher"){
 			return "#/teachers";
 		}
+		else if(menu.rel == "exams"){
+			return "#/exams";
+		}
+		else if(menu.rel == "events"){
+			return "#/events";
+		}
 		else{
-			return "#";
+			return "#/";
 		}
 	};
 	
