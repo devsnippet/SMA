@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'HomeController@showWelcome');
-Route::get('/account', 'AccountController@get_login');
+Route::get('/account/{userid}/{error}', 'AccountController@get_login');
 Route::post('/account', 'AccountController@post_login');
 Route::get('/account/logout', 'AccountController@get_logout');
 

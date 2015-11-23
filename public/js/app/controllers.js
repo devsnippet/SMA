@@ -17,10 +17,10 @@ function($scope, $routeParams, UserService) {
 		else if(menu.rel == "teacher"){
 			return "#/teachers";
 		}
-		else if(menu.rel == "exams"){
+		else if(menu.rel == "exam"){
 			return "#/exams";
 		}
-		else if(menu.rel == "events"){
+		else if(menu.rel == "event"){
 			return "#/events";
 		}
 		else{
@@ -66,7 +66,14 @@ smaControllers.controller('studentCtrl', ['$scope', '$routeParams', 'StudentServ
 function($scope, $routeParams, StudentService) {
 	$scope.obj = StudentService.get({id: $routeParams.id}, function(student) {
 		console.log(student);
+		$scope.id = student["embedded"]["ea:student"]["id"];
 		$scope.name = student["embedded"]["ea:student"]["name"];
 		$scope.image = student["embedded"]["ea:student"]["image"];
     });
+}]);
+
+
+smaControllers.controller('notFoundCtrl', ['$scope', '$routeParams',
+function($scope, $routeParams) {
+	
 }]);

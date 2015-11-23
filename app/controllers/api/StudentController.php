@@ -57,7 +57,7 @@ class StudentController extends \BaseController {
 				)
 			)
 		);
-		return Response::json($result);
+		return Response::json($result, 200);
 	}
 	
 	public function get_student($id)
@@ -66,10 +66,11 @@ class StudentController extends \BaseController {
 		if($id == 151){
 			$result = array(
 				'_links' => array(
-					"self" => array( "href" => $this->rootUrl . '/api/student/{id}' )
+					"self" => array( "href" => $this->rootUrl . '/api/student/' . $id )
 				),
 				"embedded" => array(
 					"ea:student" => array(
+						"id" => "151",
 						"name" => "Alice",
 						"image" => "./images/student/151.jpg"
 					)
@@ -79,10 +80,11 @@ class StudentController extends \BaseController {
 		else if($id == 152){
 			$result = array(
 				'_links' => array(
-					"self" => array( "href" => $this->rootUrl . '/api/student/{id}' )
+					"self" => array( "href" => $this->rootUrl . '/api/student/' . $id )
 				),
 				"embedded" => array(
 					"ea:student" => array(
+						"id" => "152",
 						"name" => "Bob",
 						"image" => "./images/student/152.jpg"
 					)
@@ -92,10 +94,11 @@ class StudentController extends \BaseController {
 		else if($id == 153){
 			$result = array(
 				'_links' => array(
-					"self" => array( "href" => $this->rootUrl . '/api/student/{id}' )
+					"self" => array( "href" => $this->rootUrl . '/api/student/' . $id )
 				),
 				"embedded" => array(
 					"ea:student" => array(
+						"id" => "153",
 						"name" => "Charlie",
 						"image" => "./images/student/153.jpg"
 					)
@@ -105,10 +108,11 @@ class StudentController extends \BaseController {
 		else if($id == 154){
 			$result = array(
 				'_links' => array(
-					"self" => array( "href" => $this->rootUrl . '/api/student/{id}' )
+					"self" => array( "href" => $this->rootUrl . '/api/student/' . $id )
 				),
 				"embedded" => array(
 					"ea:student" => array(
+						"id" => "154",
 						"name" => "Dave",
 						"image" => "./images/student/154.jpg"
 					)
@@ -118,17 +122,31 @@ class StudentController extends \BaseController {
 		else if($id == 155){
 			$result = array(
 				'_links' => array(
-					"self" => array( "href" => $this->rootUrl . '/api/student/{id}' )
+					"self" => array( "href" => $this->rootUrl . '/api/student/' . $id )
 				),
 				"embedded" => array(
 					"ea:student" => array(
+						"id" => "155",
 						"name" => "Elisa",
 						"image" => "./images/student/155.jpg"
 					)
 				)
 			);
 		}
+		else{
+			$result = array(
+				'_links' => array(
+					"self" => array( "href" => $this->rootUrl . '/api/student/' . $id )
+				),
+				"embedded" => array(
+					"ea:input" => array(
+						"id" => $id
+					)
+				)
+			);
+			return Response::json($result, 404);
+		}
 		
-		return Response::json($result);
+		return Response::json($result, 200);
 	}
 }

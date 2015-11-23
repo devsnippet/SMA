@@ -30,3 +30,17 @@ var q = q || {};
 	}
 	q.sformat = sformat;
 }(q, jQuery));
+
+
+// htmlEncode
+(function(root, $){
+	var htmlEncode = function(str) {
+		return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+	}
+	root.htmlEncode = htmlEncode;
+}(q, jQuery));

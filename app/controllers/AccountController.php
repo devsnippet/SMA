@@ -4,9 +4,11 @@ class AccountController extends BaseController {
 
     protected $layout = 'layouts.master';
 	
-	public function get_login()
+	public function get_login($userid, $error)
 	{
-		$this->layout->content = View::make('account.login');
+		$this->layout->content = View::make('account.login')->with(
+			'data', array('userid' => $userid, 'error' => $error)
+		);
 	}
 	public function post_login()
 	{
@@ -17,7 +19,7 @@ class AccountController extends BaseController {
 			return Redirect::to('/');
 		}
 		else{
-			$this->layout->content = View::make('account.login');	
+			return Redirect::to('/account/' . $username . '/not_match');
 		}
 	}
 	

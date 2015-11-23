@@ -25,6 +25,7 @@ smaApp.config(['$routeProvider',
         controller: 'studentCtrl'
       }).
       otherwise({
-        redirectTo: '/'
+		templateUrl : 'ng/404.html',
+        controller : 'notFoundCtrl'
       });
   }]);

@@ -17,6 +17,9 @@ sma.user = sma.user || {};
 				if(data["_links"] && data["_links"]["next"]){
 					window.location = data["_links"]["next"]["href"];
 				}
+			},
+			error: function(data){
+				window.location = "./account/" + username + "/not_match";	
 			}
 		});
 	};

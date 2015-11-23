@@ -17,7 +17,7 @@ class UserController extends \BaseController {
 			Session::set('user_id', $user['userid']);
 			$result = $this->constructResponse($user);
 			$result["_links"]["next"] = array("href" => $this->rootUrl);
-			return Response::json($result);
+			return Response::json($result, 200);
 		}
 		else{
 			$result = array(
@@ -27,7 +27,7 @@ class UserController extends \BaseController {
 					"password" => $password
 				)
 			);
-			return Response::json($result);
+			return Response::json($result, 400);
 		}
 	}
 	public function get_user($userid)
